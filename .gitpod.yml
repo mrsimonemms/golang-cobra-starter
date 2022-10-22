@@ -9,7 +9,23 @@ tasks:
       # Activate hooks
       husky install
 
+      # Copy .cobra.yaml to $HOME
+      cp .cobra.yaml $HOME/.cobra.yaml
+
+      if [ ! -f "go.mod" ]; then
+        echo "Creating Go module"
+        go mod init ${GITPOD_WORKSPACE_CONTEXT_URL/https:\/\//}
+      fi
+      if [ ! -f "main.go" ]; then
+        echo "Create Cobra project"
+        cobra-cli init
+        go mod tidy
+      fi
+    init: |
+      go install github.com/spf13/cobra-cli@latest
+
 vscode:
   extensions:
     - donjayamanne.git-extension-pack
     - EditorConfig.EditorConfig
+    - golang.go
