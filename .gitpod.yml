@@ -1,6 +1,8 @@
 tasks:
-  - init: |
-      go install github.com/spf13/cobra-cli@latest
+  - before: |
+      curl -sfL gpm.simonemms.com | bash
+
+      gpm install cobra-cli
     command: |
       # Install commitlint
       npm i -g @commitlint/{config-conventional,cli}
