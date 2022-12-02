@@ -1,5 +1,9 @@
 tasks:
-  - before: |
+  - init: |
+      if [ ! -f "go.mod" ]; then
+        go install ./...
+      fi
+    before: |
       curl -sfL gpm.simonemms.com | bash
 
       gpm install cobra-cli
