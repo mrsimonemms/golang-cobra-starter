@@ -1,7 +1,6 @@
 FROM golang AS builder
 ARG GIT_COMMIT
 ARG GIT_REPO
-ARG PROJECT_NAME
 ARG VERSION
 WORKDIR /app
 ADD . .
@@ -10,13 +9,12 @@ ENV GOOS=linux
 ENV PROJECT_NAME="${PROJECT_NAME}"
 RUN go build \
   -ldflags \
-  "-X $GIT_REPO/cmd.Version=$VERSION -X $GIT_REPO/cmd.GitCommit=$GIT_COMMIT"
-ENTRYPOINT /app/${PROJECT_NAME}
+  "-X $GIT_REPO/cmd.Version=$VERSION -X $GIT_REPO/cmd.GitCommit=$GIT_COMMIT" \
+  -o /app/app
+ENTRYPOINT /app/app
 
 FROM alpine
-ARG PROJECT_NAME
-ENV PROJECT_NAME="${PROJECT_NAME}"
 RUN apk --no-cache add ca-certificates
 WORKDIR /app
-COPY --from=builder /app/$PROJECT_NAME /app
-ENTRYPOINT /app/${PROJECT_NAME}
+COPY --from=builder /app/app /app
+ENTRYPOINT [ "/app/app" ]
