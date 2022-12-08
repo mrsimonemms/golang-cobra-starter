@@ -1,6 +1,6 @@
 tasks:
   - init: |
-      if [ ! -f "go.mod" ]; then
+      if [ -f "go.mod" ]; then
         go install ./...
       fi
     before: |
