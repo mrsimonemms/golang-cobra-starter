@@ -6,17 +6,8 @@ tasks:
     before: |
       curl -sfL gpm.simonemms.com | bash
 
-      gpm install cobra-cli
+      gpm install cobra-cli pre-commit
     command: |
-      # Install commitlint
-      npm i -g @commitlint/{config-conventional,cli}
-
-      # Install husky
-      npm i -g husky
-
-      # Activate hooks
-      husky install
-
       # Copy .cobra.yaml to $HOME
       cp .cobra.yaml $HOME/.cobra.yaml
 
@@ -32,6 +23,8 @@ tasks:
         cobra-cli init
         go mod tidy
       fi
+
+      pre-commit install --install-hooks
 
 vscode:
   extensions:
