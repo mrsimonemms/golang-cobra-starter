@@ -1,12 +1,14 @@
 tasks:
   - init: |
+      go install github.com/spf13/cobra-cli@latest
+
       if [ -f "go.mod" ]; then
         go install ./...
       fi
     before: |
       curl -sfL gpm.simonemms.com | bash
 
-      gpm install cobra-cli pre-commit
+      gpm install pre-commit
     command: |
       # Copy .cobra.yaml to $HOME
       cp .cobra.yaml $HOME/.cobra.yaml
