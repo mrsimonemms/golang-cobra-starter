@@ -1,6 +1,7 @@
 tasks:
   - init: |
       go install github.com/spf13/cobra-cli@latest
+      go install github.com/golangci/golangci-lint/cmd/golangci-lint@v1.50.1
 
       if [ -f "go.mod" ]; then
         go install ./...
