@@ -4,7 +4,7 @@ image:
 tasks:
   - name: Setup
     command: |
-      pre-commit install --install-hooks
+      pre-commit install --install-hooks -t pre-commit -t commit-msg
 
       gp sync-done pre-commit
 
