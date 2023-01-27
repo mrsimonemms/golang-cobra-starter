@@ -13,10 +13,9 @@
       "go install mvdan.cc/gofumpt@latest",
       "go install honnef.co/go/tools/cmd/staticcheck@latest",
       "go install golang.org/x/tools/cmd/goimports@latest",
-      "pre-commit install --install-hooks",
       "if [ -f \"go.mod\" ]; then\n go install ./...\n fi",
       "cp .cobra.yaml $HOME/.cobra.yaml",
-      "pre-commit install --install-hooks"
+      "pre-commit install --install-hooks -t pre-commit -t commit-msg"
     ]
   },
   "nixpkgs": {
