@@ -2,6 +2,7 @@ repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
     rev: v4.4.0
     hooks:
+      - id: check-yaml
       - id: end-of-file-fixer
       - id: trailing-whitespace
   - repo: https://github.com/compilerla/conventional-pre-commit
@@ -14,6 +15,18 @@ repos:
     rev: v1.1.1
     hooks:
       - id: markdown-toc
+  - repo: https://github.com/golangci/golangci-lint
+    rev: v1.50.1
+    hooks:
+      - id: golangci-lint
+  - repo: https://github.com/Bahjat/pre-commit-golang
+    rev: v1.0.3
+    hooks:
+      - id: go-fmt-import
+      - id: go-vet
+      - id: gofumpt
+      - id: go-err-check
+      - id: go-static-check
   - repo: https://github.com/markdownlint/markdownlint
     rev: v0.12.0
     hooks:

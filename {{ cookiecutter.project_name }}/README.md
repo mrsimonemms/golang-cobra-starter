@@ -1,4 +1,4 @@
-# New
+# {{ cookiecutter.project_name }}
 
 <!-- toc -->
 
@@ -9,11 +9,7 @@
 
 <!-- tocstop -->
 
-A blank project for getting started. This is configured for [Gitpod](https://gitpod.io)
-and [devbox](https://www.jetpack.io/devbox).
-
-Run `cruft create https://github.com/mrsimonemms/golang-cobra-starter --skip=.git`
-to create a new repo.
+{{ cookiecutter.description }}
 
 ## Open in Gitpod
 
