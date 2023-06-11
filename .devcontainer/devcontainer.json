@@ -15,7 +15,7 @@
     }
   },
   "postStartCommand": {
-    "copy-cobra": " cp .cobra.yaml $HOME/.cobra.yaml",
+    "copy-cobra": "ln -s $PWD/.cobra.yaml $HOME/.cobra.yaml",
     "cobra-install": "go install github.com/spf13/cobra-cli@latest",
     "golangci-lint": "go install github.com/golangci/golangci-lint/cmd/golangci-lint@latest",
     "errcheck": "go install github.com/kisielk/errcheck@latest",

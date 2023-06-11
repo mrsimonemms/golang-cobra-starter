@@ -3,20 +3,19 @@
 <!-- toc -->
 
 * [Open in Gitpod](#open-in-gitpod)
-* [Open in devbox](#open-in-devbox)
+* [Open in a container](#open-in-a-container)
 
 <!-- Regenerate with "pre-commit run -a markdown-toc" -->
 
 <!-- tocstop -->
 
 A blank project for getting started. This is configured for [Gitpod](https://gitpod.io)
-and [devbox](https://www.jetpack.io/devbox).
+and [devcontainers](https://code.visualstudio.com/docs/devcontainers/containers).
 
 ## Open in Gitpod
 
 * [Open in Gitpod](https://gitpod.io/from-referrer/)
 
-## Open in devbox
+## Open in a container
 
-* `curl -fsSL https://get.jetpack.io/devbox | bash`
-* `devbox shell`
+* [Open in a container](https://code.visualstudio.com/docs/devcontainers/containers)

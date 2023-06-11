@@ -15,7 +15,7 @@ tasks:
       fi
     command: |
       # Copy .cobra.yaml to $HOME
-      cp .cobra.yaml $HOME/.cobra.yaml
+      ln -s $PWD/.cobra.yaml $HOME/.cobra.yaml
 
       export GIT_REPO="${GITPOD_WORKSPACE_CONTEXT_URL/https:\/\//}"
       export PROJECT_NAME="${GIT_REPO##*/}"
