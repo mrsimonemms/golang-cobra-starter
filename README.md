@@ -1,5 +1,8 @@
 # New
 
+> Deprecated. Use the [Golang Cobra](https://github.com/mrsimonemms/new/tree/main/golang-cobra)
+> template instead
+
 <!-- toc -->
 
 * [Open in Gitpod](#open-in-gitpod)
